@@ -1,3 +1,13 @@
 body{
-    background-color: #c1c1c1;
+    background-color:#34495e;
 }
+
+#container{
+    width :400px;
+    margin : 0 auto; 
+    text-align: center;
+    background-color: white;
+    height:780px;
+    color: black;
+}
+
