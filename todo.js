@@ -7,7 +7,38 @@ var removeAllTodo = document.getElementById('removeAll').addEventListener('click
 
 
 function addItem(){
-    console.log('add button clicked');
+   var input = document.getElementById('input');
+   var myValue = input.value;
+   console.log(myValue);
+   
+   var textnode = document.createTextNode(myValue)
+   
+    //create li
+
+    li = document.createElement('li')
+
+    //create checkbox
+    var checkBox = document.createElement('input')
+    checkBox.type = 'checkbox';
+    checkBox.setAttribute('id','check')
+
+    //create label
+    var label = document.createElement('label')
+    label.setAttribute('for','item')
+
+    //aad these elements on the web
+
+    ul.appendChild(li)
+    li.appendChild(checkBox)
+    label.appendChild(textnode)
+    li.appendChild(label)
+    ul.insertBefore(li,ul.childNodes[0])
+
+    setTimeout(() => {
+        li.className = "visual"
+    }, 2); 
+    
+   
     
 }
 
