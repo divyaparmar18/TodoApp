@@ -12,7 +12,23 @@ function addItem(){
    console.log(myValue);
    
    var textnode = document.createTextNode(myValue)
+   ;
    
+   if(myValue === ""){
+    const myParah = document.createElement('p')
+    myParah.textContent = 'Invalid Input, please insert something'
+    var invalid = document.querySelector('.controls').appendChild(myParah);
+    invalid.style.opacity = "1"
+        
+    setTimeout(() => {
+        invalid.style.opacity = "0"
+        myParah.remove(invalid)
+    }, 2000);
+    
+
+}
+   else{
+
     //create li
 
     li = document.createElement('li')
@@ -38,7 +54,8 @@ function addItem(){
         li.className = "visual"
     }, 2); 
     
-   
+    input.value = ""
+   }
     
 }
 
@@ -55,6 +72,6 @@ function removeItem(){
 function removeAllItem(){
     li = ul.children;
      for (let index = 0; index < li.length; index++) {
-         ul.remove(li[index])
+         ul.removeChild(li[index])
      }
  } 
